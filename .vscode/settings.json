@@ -1,0 +1,17 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex-cv",
+      "command": "C:/Users/minha/AppData/Local/Programs/MiKTeX/miktex/bin/x64/pdflatex.exe",
+      "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-halt-on-error", "%DOC%"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Build CV (pdfLaTeX twice)",
+      "tools": ["pdflatex-cv", "pdflatex-cv"]
+    }
+  ],
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.view.pdf.viewer": "tab"
+}

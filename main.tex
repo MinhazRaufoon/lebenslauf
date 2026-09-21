@@ -1,0 +1,272 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\usepackage{standalone}
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%\usepackage[utf8]{inputenc}
+
+%\usepackage{booktabs}
+\usepackage{fontawesome}
+\usepackage{marvosym} % For cool symbols.
+%\usepackage{hyperref}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Minhaz} % Your first name
+\familyname{Raufoon} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Automotive Software Engineer}
+\address{Guerickestraße 30}{10587 Berlin, Deutschland}
+
+
+%\fax{(000) 111 1113}
+ 
+%\social{github}{stefano-bragaglia}
+\email{minhaz.raufoon.1567@gmail.com} 
+\mobile{(+49)1788680932}
+
+
+
+\homepage{minraufoon.web.app/}{minraufoon.web.app}
+
+% social link \faGithub, \faSkype, \faLinkedin,\faStackExchange, and \faStackOverflow
+\extrainfo{
+    \faGithub\href{https://github.com/raufoon}{ MinhazRaufoon} \quad
+    \faLinkedin\href{https://www.linkedin.com/in/raufoon/}{ raufoon} \quad
+    %\faSkype\href{https://skype.com/abc}{Skype}
+    }
+
+
+
+%\social[linkedin][www.linkedin.com]{name}
+% The first argument is %the url for the clickable link, the second argument is the url displayed in the %template - this allows special characters to be displayed such as the tilde in this %example
+
+\photo[3.5cm][0pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
+%\quote{Not Attention, Patience is all we need.}
+
+%----------------------------------------------------------------------------------------
+
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvitem[.75em]{}{%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}%
+    }%
+}
+
+
+
+\usepackage{multibbl}
+\newcommand\Colorhref[3][orange]{\href{#2}{\small\color{#1}#3}}
+
+
+% \newcommand{\cvreference}[7]{%
+%     \textbf{#1}\newline% Name
+%     \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+%     \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+%     \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+%     \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+%     \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+%     \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+
+\section{Persönliche Informationen}
+
+\cvitem{Geburtsdatum}{10.09.1993}
+\cvitem{Staatsangehörigkeit}{Bangladeschisch}
+\cvitem{Sprachen}{Englisch (C1), Deutsch (A2)}
+
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Ausbildung}
+
+\cventry{10.2019 - 12.2023}{M.Sc., Automotive Software Engineering}{Technische Universität Chemnitz}{09111 Chemnitz, Deutschland}{\textit{www.tu-chemnitz.de}}
+{\begin{itemize}
+    \item Note: 1.4
+    \item Thema Forschungspraktikum: Ego-Speed-Schätzung mit Automotive Radar
+    \item Thema Masterarbeit: GPU-basierte DoA-Schätzung für große Radarapertur
+\end{itemize}}  % Arguments not required can be left empty
+
+\cventry{01.2013 -- 12.2016}{B.Sc. (Hons), Computer Science and Engineering}{University of Dhaka}{1000 Dhaka, Bangladesch}{\textit{www.du.ac.bd}}
+{\begin{itemize}
+    \item Note: 3.50 (Deutsche Note: 2.0)
+    \item Thema Bachelorarbeit: Fast-Failover-Mechanismen im Software Defined Networking (SDN)
+\end{itemize}}  % Arguments not required can be left empty
+
+%----------------------------------------------------------------------------------------
+%	Experience
+%----------------------------------------------------------------------------------------
+
+\section{Berufserfahrung}
+
+\cventry{10.2023 -- laufend}
+{Konzeptentwickler - Autonomes Fahren}
+{IAV GmbH}
+{10587 Berlin, Deutschland}
+{\textit{www.iav.com}}
+{Mitwirkung an mehreren Projekten im Zusammenhang mit der Signalverarbeitung von Automobilradaren unter Verwendung von Technologien wie C++, CUDA, Python usw.}
+
+\cventry{10.2022 -- 09-2023}
+{Masterarbeit Student - Parallele Programmierung für Radarsignalverarbeitung}
+{Volkswagen AG}
+{38436 Wolfsburg, Deutschland}
+{\textit{www.volkswagenag.com}}
+{
+\begin{itemize}
+    \item Thema Masterarbeit: Evaluierung GPU-basierter Ansätze zur Schätzung der Ankunftsrichtung für große kohärente 3D-Radaraperturen
+    \item Implementierung mehrerer paralleler Programmierlösungen (CUDA und C++) zur Schätzung der Ankunftsrichtung für das experimentelle Radar mit großer Apertur
+    \item Implementierung einer C++-Planungslösung zur Verteilung der Ankunftsrichtungsschätzung auf mehrere GPUs
+    \item Evaluierte die Lösungen mit NVIDIA Nsight-Profilern
+\end{itemize}
+} 
+
+\cventry{09.2021 -- 09.2022}
+{Studentische Hilfskraft - Algorithmenentwicklung zur Sensordatenfusion}
+{Fakultät für Elektrotechnik und Informationstechnik, Technische Universität Chemnitz}
+{09111 Chemnitz, Deutschland}
+{\textit{www.tu-chemnitz.de/etit/nt/index.html}}
+{
+\begin{itemize}
+    \item Eigenentwickelte C++ App zur Erkennung und Visualisierung mit Smartmicro Automotive Radar
+    \item Entwickelte C++ App zur Datenübertragung mit Peak CAN USB Pro für die Radardatenerfassung
+    \item Literaturrecherche zur Ego-Fahrzeug-Geschwindigkeitsschätzung mit Automotive Radar und Entwicklung einer C++ App zur Ego-Geschwindigkeitsschätzung aus den Forschungsergebnissen
+    \item Testfahrt mit am Fahrzeug montierten Sensoren (Radar, Kamera, GPS)
+    \item Durchgeführte Analyse von Testfahrtdaten durch Python und Matplotlib
+\end{itemize}
+} 
+
+\cventry{04.2021 -- 12.2021}
+{Werkstudent - Softwareentwicklung}
+{Intenta GmbH}
+{09112 Chemnitz, Deutschland}
+{\textit{www.intenta.de}}
+{\begin{itemize}
+    \item Entwickelte Web-App mit React zur Visualisierung von Fahrzeugdaten in einer geografischen Karte
+    \item Überarbeitung eines Großteils der Visualisierungs-Web-App für bessere Leistung und Architektur
+    \item Entwickelte GraphQL-API für die Visualisierung
+    \item Erstellung von Konzepten zu den neuen Features für die Web-App
+\end{itemize}} 
+
+\cventry{08.2020 -- 02.2021}
+{Werkstudent - Softwareentwicklung}
+{Krashennikov}
+{01067 Dresden, Deutschland}
+{\textit{www.krashennikov.com}}
+{\begin{itemize}
+    \item Eigenständige Entwicklung einer progressiven Web-App (\underline{www.sizze.de}) mit React für die automatische Kleidungsstückvermessung und Kommentierung von Kleidungsstückfotos
+\end{itemize}} 
+
+\cventry{03.2017 -- 08.2019}
+{Junior-Software-Ingenieur}
+{RingID}
+{Dhaka, Bangladesch}
+{\textit{www.ringid.com}}
+{\begin{itemize}
+    \item Entwickelte Social-Networking-Funktionen (Newsfeed, Profil, Chat) mit Angularjs
+\end{itemize}} 
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Kenntnisse}
+
+\cvitem{Programmierung}{C++, CUDA, RUST, Python}
+\cvitem{Frameworks/Tools}{ROS2, React.js, Node.js, MATLAB}
+\cvitem{Konzepte}{Parallele-Programmierung, Radarsignalverarbeitung, Full-Stack Entwicklung}
+\cvitem{Datenbanken}{PostgreSQL, MongoDB}
+\cvitem{Sonstiges}{GraphQL, Microsoft Azure, Firebase, Docker}
+
+\section{Projekte}
+
+
+\cventry{Eingebettete Software}
+{\small 1. RaspNet - Kommunikationsprotokoll für Raspberry Pi}
+{}{}{}
+{
+\begin{itemize}
+    \item Kommunikationsprotokoll (Layer 1-4) für Raspberry Pi Computer in einer Ringtopologie
+    \item Tools: Embedded C, Gertboard mit ATmega328P mcu, Raspberry Pi
+\end{itemize}
+}
+
+\cventry{Backend-Entwicklung}
+{\small 1. GVIS - Geografische Datenvisualisierung}
+{\textit{ssum-gvis.web.app}}
+{}{}
+{
+\begin{itemize}
+    \item Eine Microservice-basierte Web-App zur Visualisierung nützlicher Informationen (z. B. Wetter) auf einer geografischen Karte
+    \item Alle Source-Code: \textit{\underline{bitbucket.org/raufoon1/workspace/projects/GVIS}}
+    \item Architektur: \textit{\underline{bitbucket.org/raufoon1/gvis-integration/src/master/README.md}}
+    \item Tools: TypeScript, React.js, Apollo, GraphQL, Deck.gl, Bootstrap, Express.js, MongoDB, Docker, Microsoft Azure, Heroku, Firebase, Bitbucket, JIRA, Confuence
+\end{itemize}
+} 
+
+\cventry{Full-Stack-Webentwicklung}
+{\small 1. SIZZE - Digitale Kleidervermessung}
+{\textit{www.sizze.de}}
+{}{}
+{
+\begin{itemize}
+    \item Automatisches Vermessen von Kleidungsstücken und Kommentieren von Kleidungsstückfotos
+    \item Tools: React.js, Redux.js, Django, PostgreSQL
+\end{itemize}
+} 
+
+
+
+\begin{center}
+\small \textit{Alle Projekte finden Sie unter \underline{https://minraufoon.web.app/projects}}
+\end{center}
+
+\null
+\vfill
+\hfill\includegraphics[scale=.1]{signature.jpg}
+\\
+\small \hspace{10 mm}Datum: 01.05.2024 \hfill 
+Ort: Berlin, Deutschland \hfill Unterschrift\hspace{10 mm}
+
+\end{document}
