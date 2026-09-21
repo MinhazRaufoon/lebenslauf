@@ -24,7 +24,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
-\usepackage[default]{sourcesanspro} % Clean, professional sans-serif typography.
+\usepackage[default,semibold]{sourcesanspro} % Use semibold for lighter emphasis.
 \pdfmapfile{+SourceSansThree.map} % Register the installed Type 1 fonts for pdfLaTeX.
 \usepackage{standalone}
 \moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
@@ -127,7 +127,7 @@
 
 \cvitem{Geburtsdatum}{10.09.1993}
 \cvitem{Staatsangehörigkeit}{bangladeschisch}
-\cvitem{Sprachen}{Englisch (C1), Deutsch (A2)}
+\cvitem{Sprachen}{Englisch (C1), Deutsch (B1)}
 
 
 
@@ -140,14 +140,15 @@
 \cventry{10.2019 -- 12.2023}{M.Sc., Automotive Software Engineering}{Technische Universität Chemnitz}{09111 Chemnitz, Deutschland}{\textit{www.tu-chemnitz.de}}
 {\begin{itemize}
     \item Abschlussnote: 1,4
-    \item Forschungspraktikum: Schätzung der Eigengeschwindigkeit mit Fahrzeugradar
-    \item Masterarbeit: GPU-basierte Richtungsschätzung (DoA) für große Radaraperturen
+    \item Forschungspraktikum: Radarbasierte Eigengeschwindigkeitsschätzung in C++
+    \item Masterarbeit: CUDA-/C++-basierte DoA-Schätzung für große kohärente Radaraperturen
+    \item RaspNet: Kommunikationsprotokoll (Schichten 1--4) für Raspberry Pi in Embedded C
 \end{itemize}}  % Arguments not required can be left empty
 
 \cventry{01.2013 -- 12.2016}{B.Sc. (Hons), Computer Science and Engineering}{University of Dhaka}{1000 Dhaka, Bangladesch}{\textit{www.du.ac.bd}}
 {\begin{itemize}
     \item Abschlussnote: 3,50 (deutsche Note: 2,0)
-    \item Bachelorarbeit: Fast-Failover-Mechanismen im Software-Defined Networking (SDN)
+    \item Bachelorarbeit: Experimenteller Vergleich von Fast-Failover-Verfahren im SDN
 \end{itemize}}  % Arguments not required can be left empty
 
 %----------------------------------------------------------------------------------------
@@ -161,7 +162,11 @@
 {IAV GmbH}
 {10587 Berlin, Deutschland}
 {\textit{www.iav.com}}
-{Mitarbeit an mehreren Projekten zur Radarsignalverarbeitung im Automobilbereich mit C++, CUDA und Python.}
+{\begin{itemize}
+    \item Entwicklung GPU-basierter Radarsignalverarbeitung in CUDA und C++ für große Radaraperturen unter Echtzeitanforderungen
+    \item Vergleich von Genauigkeit und Performance mit modernen Radar- und Lidarsystemen
+    \item Entwicklung von Tracking-Algorithmen in MATLAB und Python zur Positions- und Geschwindigkeitsschätzung von Radarobjekten
+\end{itemize}}
 
 \cventry{10.2022 -- 09.2023}
 {Masterand - Parallele Programmierung für die Radarsignalverarbeitung}
@@ -170,10 +175,9 @@
 {\textit{www.volkswagenag.com}}
 {
 \begin{itemize}
-    \item Masterarbeit: Evaluierung GPU-basierter Verfahren zur Richtungsschätzung (DoA) für große kohärente 3D-Radaraperturen
-    \item Implementierung paralleler Algorithmen in CUDA und C++ zur Richtungsschätzung für ein experimentelles Radar mit großer Apertur
-    \item Entwicklung einer Scheduling-Lösung in C++ zur Verteilung der Berechnungen auf mehrere GPUs
-    \item Leistungsanalyse der implementierten Verfahren mit NVIDIA Nsight
+    \item Implementierung und Vergleich paralleler DoA-Verfahren in CUDA und C++ für große kohärente 3D-Radaraperturen
+    \item Analyse von GPU-Auslastung, Laufzeit und Engpässen mit NVIDIA Nsight
+    \item Entwicklung einer C++-Scheduling-Lösung zur Verteilung der Berechnungen auf mehrere GPUs
 \end{itemize}
 } 
 
@@ -184,11 +188,9 @@
 {\textit{www.tu-chemnitz.de/etit/nt/index.html}}
 {
 \begin{itemize}
-    \item Eigenständige Entwicklung einer C++-Anwendung zur Detektion und Visualisierung mit einem Fahrzeugradar von Smartmicro
-    \item Entwicklung einer C++-Anwendung zur Übertragung und Erfassung von Radardaten mit PEAK CAN USB Pro
-    \item Literaturrecherche zur radarbasierten Schätzung der Eigengeschwindigkeit und Umsetzung der recherchierten Ansätze in einer C++-Anwendung
-    \item Durchführung einer Testfahrt mit fahrzeugmontierten Sensoren (Radar, Kamera und GPS)
-    \item Analyse der Testfahrtdaten mit Python und Matplotlib
+    \item Eigenständige Entwicklung von C++-Anwendungen zur Erfassung und Visualisierung von Smartmicro-Radardaten über CAN mit PEAK CAN USB Pro
+    \item Recherche und C++-Implementierung radarbasierter Eigengeschwindigkeitsschätzung mit Filterung und Erkennung bewegter Ziele
+    \item Testfahrt mit Radar, Kamera und GPS; Auswertung der Messdaten mit Python und Matplotlib
 \end{itemize}
 } 
 
@@ -198,10 +200,8 @@
 {09112 Chemnitz, Deutschland}
 {\textit{www.intenta.de}}
 {\begin{itemize}
-    \item Entwicklung einer React-Webanwendung zur Visualisierung von Fahrzeugdaten auf einer geografischen Karte
-    \item Überarbeitung wesentlicher Teile der Webanwendung zur Verbesserung von Performance und Softwarearchitektur
-    \item Entwicklung einer GraphQL-API zur Bereitstellung der Visualisierungsdaten
-    \item Konzeption neuer Funktionen für die Webanwendung
+    \item Entwicklung einer React-/deck.gl-Webanwendung zur Visualisierung von Fahrzeugdaten auf Karten und in Diagrammen sowie zugehöriger GraphQL-APIs
+    \item Refactoring zur Verbesserung von Performance und Wartbarkeit im agilen Scrum-Team
 \end{itemize}} 
 
 \cventry{08.2020 -- 02.2021}
@@ -210,7 +210,8 @@
 {01067 Dresden, Deutschland}
 {\textit{www.krashennikov.com}}
 {\begin{itemize}
-    \item Eigenständige Entwicklung einer Progressive Web App mit React (\underline{www.sizze.de}) zur automatischen Vermessung von Kleidungsstücken und zur Annotation von Kleidungsfotos
+    \item Eigenständige Entwicklung einer React-/Redux-PWA (\underline{www.sizze.de}) zur automatischen Kleidungsvermessung und Bildannotation für Machine-Learning-Daten
+    \item SIZZE-Technologien: React, Redux, Django und PostgreSQL
 \end{itemize}} 
 
 \cventry{03.2017 -- 08.2019}
@@ -219,7 +220,7 @@
 {Dhaka, Bangladesch}
 {\textit{www.ringid.com}}
 {\begin{itemize}
-    \item Entwicklung von Funktionen für ein soziales Netzwerk (Newsfeed, Profil und Chat) mit AngularJS
+    \item Entwicklung von Newsfeed, Profil und Chat mit AngularJS; Überarbeitung des Build-Systems mit Gulp.js und individueller Code-Minifizierung
 \end{itemize}} 
 
 %----------------------------------------------------------------------------------------
@@ -228,60 +229,26 @@
 
 \section{Kenntnisse}
 
-\cvitem{Programmierung}{C++, CUDA, Rust, Python}
-\cvitem{Frameworks/Tools}{ROS 2, React.js, Node.js, MATLAB}
-\cvitem{Schwerpunkte}{Parallele Programmierung, Radarsignalverarbeitung, Full-Stack-Entwicklung}
+\cvitem{Programmierung}{C++, CUDA, Python, MATLAB, Embedded C, Rust}
+\cvitem{Schwerpunkte}{GPU Computing, parallele Programmierung, Radarsignalverarbeitung, digitale Signalverarbeitung, Echtzeitsoftware und Performance-Optimierung}
+\cvitem{Entwicklungstools}{CMake, Git, NVIDIA Nsight, Catch2, spdlog}
+\cvitem{Frameworks}{ROS 2 Humble, DDS / Cyclone DDS, OpenCV, Qt / QML}
+\cvitem{Webentwicklung}{JavaScript / TypeScript, React / Redux, Node.js / Express, GraphQL / Apollo}
 \cvitem{Datenbanken}{PostgreSQL, MongoDB}
-\cvitem{Sonstiges}{GraphQL, Microsoft Azure, Firebase, Docker}
+\cvitem{Deployment}{Docker, Microsoft Azure, Firebase}
 
-\section{Projekte}
+\section{Zertifikate}
 
-
-\cventry{Eingebettete Software}
-{\small RaspNet - Kommunikationsprotokoll für Raspberry Pi}
-{}{}{}
-{
-\begin{itemize}
-    \item Kommunikationsprotokoll für die Schichten 1 bis 4 für Raspberry-Pi-Rechner in einer Ringtopologie
-    \item Technologien: Embedded C, Gertboard mit ATmega328P-Mikrocontroller, Raspberry Pi
-\end{itemize}
-}
-
-\cventry{Backend-Entwicklung}
-{\small GVIS - Geografische Datenvisualisierung}
-{\textit{ssum-gvis.web.app}}
-{}{}
-{
-\begin{itemize}
-    \item Microservice-basierte Webanwendung zur kartenbasierten Visualisierung von Informationen, beispielsweise Wetterdaten
-    \item Quellcode: \textit{\underline{bitbucket.org/raufoon1/workspace/projects/GVIS}}
-    \item Architektur: \textit{\underline{bitbucket.org/raufoon1/gvis-integration/src/master/README.md}}
-    \item Technologien: TypeScript, React.js, Apollo, GraphQL, deck.gl, Bootstrap, Express.js, MongoDB, Docker, Microsoft Azure, Heroku, Firebase, Bitbucket, Jira, Confluence
-\end{itemize}
-} 
-
-\cventry{Full-Stack-Webentwicklung}
-{\small SIZZE - Digitale Vermessung von Kleidungsstücken}
-{\textit{www.sizze.de}}
-{}{}
-{
-\begin{itemize}
-    \item Automatische Vermessung von Kleidungsstücken und Annotation von Kleidungsfotos
-    \item Technologien: React.js, Redux.js, Django, PostgreSQL
-\end{itemize}
-} 
-
-
-
-\begin{center}
-\small \textit{Alle Projekte finden Sie unter \underline{https://minraufoon.web.app/projects}}
-\end{center}
+\cvitem{06.2025}{IBM Generative AI for Software Developers Specialization}
+\cvitem{03.2021}{Functional Programming Principles in Scala - Coursera}
+\cvitem{03.2021}{Microsoft Azure - Beginner's Guide - Udemy}
+\cvitem{06.2019}{Agile Software Development - Coursera}
 
 \null
 \vfill
 \hfill\includegraphics[scale=.1]{signature.jpg}
 \\
-\small \hspace{10 mm}Datum: 01.05.2024 \hfill 
+\small \hspace{10 mm}Datum: 01.10.2026 \hfill 
 Ort: Berlin, Deutschland \hfill Unterschrift\hspace{10 mm}
 
 \end{document}
