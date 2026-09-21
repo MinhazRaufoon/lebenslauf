@@ -24,7 +24,9 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
-\usepackage[default,semibold]{sourcesanspro} % Use semibold for lighter emphasis.
+\usepackage[default,semibold]{sourcesans} % Use semibold for lighter emphasis.
+\usepackage[ngerman]{babel}
+\usepackage{ragged2e}
 \pdfmapfile{+SourceSansThree.map} % Register the installed Type 1 fonts for pdfLaTeX.
 \usepackage{standalone}
 \moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
@@ -90,12 +92,12 @@
     \vspace{5mm}
     {\fontsize{10}{14}\selectfont\color{darkgray}%
       10587 Berlin\enspace\textbar\enspace
-      +49 178 8680932\enspace\textbar\enspace
+      \href{tel:+491788680932}{+49 178 8680932}\enspace\textbar\enspace
       \href{mailto:\@email}{\@email}\par
       \vspace{1mm}
       \href{https://minraufoon.web.app}{minraufoon.web.app}\enspace\textbar\enspace
       \href{https://github.com/raufoon}{\faGithub\ raufoon}\enspace\textbar\enspace
-      \href{https://www.linkedin.com/in/raufoon/}{\faLinkedin\ in/raufoon}\par}
+      \href{https://www.linkedin.com/in/raufoon/}{\faLinkedin\ raufoon}\par}
   \end{minipage}%
   \hfill
   \begin{minipage}[c][45mm][c]{35mm}

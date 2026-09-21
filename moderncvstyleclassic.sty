@@ -175,7 +175,7 @@
 
 \renewcommand*{\cvitem}[3][.25em]{%
   \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
- 	  \raggedleft\hintstyle{#2} &{#3}%
+	  \raggedleft\hintstyle{#2} &{\RaggedRight #3}%
   \end{tabular}%
   \par\addvspace{#1}}
 
@@ -205,7 +205,7 @@
     \ifthenelse{\equal{#6}{}}{}{, #6}%
     .\strut%
     \ifx&#7&%
-      \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+      \else{\newline{}\begin{minipage}[t]{\linewidth}\small\RaggedRight#7\end{minipage}}\fi}}
 
 \newbox{\cvitemwithcommentmainbox}
 \newlength{\cvitemwithcommentmainlength}
