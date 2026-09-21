@@ -79,15 +79,29 @@
 % Passport-style 35 x 45 mm crop, applied only when rendering the CV.
 % The original 1254 x 1254 pixel image remains unchanged.
 \makeatletter
-\patchcmd{\makecvtitle}
-  {\includegraphics[width=\@photowidth]{\@photo}}
-  {\includegraphics[viewport=260 184 1006.667 1144,clip,width=35mm,height=45mm]{\@photo}}
-  {}{\PackageError{cv}{Could not apply portrait crop}{Check the ModernCV photo command.}}
-% Compensate for the taller photo to preserve the two-page layout.
-\patchcmd{\makecvtitle}
-  {\usebox{\makecvtitlepicturebox}\\[2.5em]}
-  {\usebox{\makecvtitlepicturebox}\\[0pt]}
-  {}{\PackageError{cv}{Could not adjust title spacing}{Check the ModernCV title command.}}
+\renewcommand*{\makecvtitle}{%
+  \recomputecvlengths
+  \noindent
+  \begin{minipage}[c][45mm][c]{\dimexpr\textwidth-43mm\relax}
+    \raggedright
+    {\fontsize{36}{40}\selectfont\color{darkgray}\@firstname\ \@familyname\par}
+    \vspace{2mm}
+    {\fontsize{15}{19}\selectfont\upshape\color{darkgray}\@title\par}
+    \vspace{5mm}
+    {\fontsize{10}{14}\selectfont\color{darkgray}%
+      10587 Berlin\enspace\textbar\enspace
+      +49 178 8680932\enspace\textbar\enspace
+      \href{mailto:\@email}{\@email}\par
+      \vspace{1mm}
+      \href{https://minraufoon.web.app}{minraufoon.web.app}\enspace\textbar\enspace
+      \href{https://github.com/raufoon}{\faGithub\ raufoon}\enspace\textbar\enspace
+      \href{https://www.linkedin.com/in/raufoon/}{\faLinkedin\ in/raufoon}\par}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c][45mm][c]{35mm}
+    \includegraphics[viewport=260 184 1006.667 1144,clip,width=35mm,height=45mm]{\@photo}
+  \end{minipage}
+  \par\vspace{2mm}}
 \makeatother
 %\quote{Not Attention, Patience is all we need.}
 
