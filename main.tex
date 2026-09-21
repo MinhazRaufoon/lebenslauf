@@ -77,7 +77,20 @@
 %\social[linkedin][www.linkedin.com]{name}
 % The first argument is %the url for the clickable link, the second argument is the url displayed in the %template - this allows special characters to be displayed such as the tilde in this %example
 
-\photo[3.5cm][0pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
+\photo[35mm][0pt]{picture.png}
+% Passport-style 35 x 45 mm crop, applied only when rendering the CV.
+% The original 1254 x 1254 pixel image remains unchanged.
+\makeatletter
+\patchcmd{\makecvtitle}
+  {\includegraphics[width=\@photowidth]{\@photo}}
+  {\includegraphics[viewport=260 184 1006.667 1144,clip,width=35mm,height=45mm]{\@photo}}
+  {}{\PackageError{cv}{Could not apply portrait crop}{Check the ModernCV photo command.}}
+% Compensate for the taller photo to preserve the two-page layout.
+\patchcmd{\makecvtitle}
+  {\usebox{\makecvtitlepicturebox}\\[2.5em]}
+  {\usebox{\makecvtitlepicturebox}\\[0pt]}
+  {}{\PackageError{cv}{Could not adjust title spacing}{Check the ModernCV title command.}}
+\makeatother
 %\quote{Not Attention, Patience is all we need.}
 
 %----------------------------------------------------------------------------------------
@@ -113,7 +126,7 @@
 \section{Persönliche Informationen}
 
 \cvitem{Geburtsdatum}{10.09.1993}
-\cvitem{Staatsangehörigkeit}{Bangladeschisch}
+\cvitem{Staatsangehörigkeit}{bangladeschisch}
 \cvitem{Sprachen}{Englisch (C1), Deutsch (A2)}
 
 
@@ -124,17 +137,17 @@
 
 \section{Ausbildung}
 
-\cventry{10.2019 - 12.2023}{M.Sc., Automotive Software Engineering}{Technische Universität Chemnitz}{09111 Chemnitz, Deutschland}{\textit{www.tu-chemnitz.de}}
+\cventry{10.2019 -- 12.2023}{M.Sc., Automotive Software Engineering}{Technische Universität Chemnitz}{09111 Chemnitz, Deutschland}{\textit{www.tu-chemnitz.de}}
 {\begin{itemize}
-    \item Note: 1.4
-    \item Thema Forschungspraktikum: Ego-Speed-Schätzung mit Automotive Radar
-    \item Thema Masterarbeit: GPU-basierte DoA-Schätzung für große Radarapertur
+    \item Abschlussnote: 1,4
+    \item Forschungspraktikum: Schätzung der Eigengeschwindigkeit mit Fahrzeugradar
+    \item Masterarbeit: GPU-basierte Richtungsschätzung (DoA) für große Radaraperturen
 \end{itemize}}  % Arguments not required can be left empty
 
 \cventry{01.2013 -- 12.2016}{B.Sc. (Hons), Computer Science and Engineering}{University of Dhaka}{1000 Dhaka, Bangladesch}{\textit{www.du.ac.bd}}
 {\begin{itemize}
-    \item Note: 3.50 (Deutsche Note: 2.0)
-    \item Thema Bachelorarbeit: Fast-Failover-Mechanismen im Software Defined Networking (SDN)
+    \item Abschlussnote: 3,50 (deutsche Note: 2,0)
+    \item Bachelorarbeit: Fast-Failover-Mechanismen im Software-Defined Networking (SDN)
 \end{itemize}}  % Arguments not required can be left empty
 
 %----------------------------------------------------------------------------------------
@@ -143,24 +156,24 @@
 
 \section{Berufserfahrung}
 
-\cventry{10.2023 -- laufend}
+\cventry{seit 10.2023}
 {Konzeptentwickler - Autonomes Fahren}
 {IAV GmbH}
 {10587 Berlin, Deutschland}
 {\textit{www.iav.com}}
-{Mitwirkung an mehreren Projekten im Zusammenhang mit der Signalverarbeitung von Automobilradaren unter Verwendung von Technologien wie C++, CUDA, Python usw.}
+{Mitarbeit an mehreren Projekten zur Radarsignalverarbeitung im Automobilbereich mit C++, CUDA und Python.}
 
-\cventry{10.2022 -- 09-2023}
-{Masterarbeit Student - Parallele Programmierung für Radarsignalverarbeitung}
+\cventry{10.2022 -- 09.2023}
+{Masterand - Parallele Programmierung für die Radarsignalverarbeitung}
 {Volkswagen AG}
 {38436 Wolfsburg, Deutschland}
 {\textit{www.volkswagenag.com}}
 {
 \begin{itemize}
-    \item Thema Masterarbeit: Evaluierung GPU-basierter Ansätze zur Schätzung der Ankunftsrichtung für große kohärente 3D-Radaraperturen
-    \item Implementierung mehrerer paralleler Programmierlösungen (CUDA und C++) zur Schätzung der Ankunftsrichtung für das experimentelle Radar mit großer Apertur
-    \item Implementierung einer C++-Planungslösung zur Verteilung der Ankunftsrichtungsschätzung auf mehrere GPUs
-    \item Evaluierte die Lösungen mit NVIDIA Nsight-Profilern
+    \item Masterarbeit: Evaluierung GPU-basierter Verfahren zur Richtungsschätzung (DoA) für große kohärente 3D-Radaraperturen
+    \item Implementierung paralleler Algorithmen in CUDA und C++ zur Richtungsschätzung für ein experimentelles Radar mit großer Apertur
+    \item Entwicklung einer Scheduling-Lösung in C++ zur Verteilung der Berechnungen auf mehrere GPUs
+    \item Leistungsanalyse der implementierten Verfahren mit NVIDIA Nsight
 \end{itemize}
 } 
 
@@ -171,11 +184,11 @@
 {\textit{www.tu-chemnitz.de/etit/nt/index.html}}
 {
 \begin{itemize}
-    \item Eigenentwickelte C++ App zur Erkennung und Visualisierung mit Smartmicro Automotive Radar
-    \item Entwickelte C++ App zur Datenübertragung mit Peak CAN USB Pro für die Radardatenerfassung
-    \item Literaturrecherche zur Ego-Fahrzeug-Geschwindigkeitsschätzung mit Automotive Radar und Entwicklung einer C++ App zur Ego-Geschwindigkeitsschätzung aus den Forschungsergebnissen
-    \item Testfahrt mit am Fahrzeug montierten Sensoren (Radar, Kamera, GPS)
-    \item Durchgeführte Analyse von Testfahrtdaten durch Python und Matplotlib
+    \item Eigenständige Entwicklung einer C++-Anwendung zur Detektion und Visualisierung mit einem Fahrzeugradar von Smartmicro
+    \item Entwicklung einer C++-Anwendung zur Übertragung und Erfassung von Radardaten mit PEAK CAN USB Pro
+    \item Literaturrecherche zur radarbasierten Schätzung der Eigengeschwindigkeit und Umsetzung der recherchierten Ansätze in einer C++-Anwendung
+    \item Durchführung einer Testfahrt mit fahrzeugmontierten Sensoren (Radar, Kamera und GPS)
+    \item Analyse der Testfahrtdaten mit Python und Matplotlib
 \end{itemize}
 } 
 
@@ -185,10 +198,10 @@
 {09112 Chemnitz, Deutschland}
 {\textit{www.intenta.de}}
 {\begin{itemize}
-    \item Entwickelte Web-App mit React zur Visualisierung von Fahrzeugdaten in einer geografischen Karte
-    \item Überarbeitung eines Großteils der Visualisierungs-Web-App für bessere Leistung und Architektur
-    \item Entwickelte GraphQL-API für die Visualisierung
-    \item Erstellung von Konzepten zu den neuen Features für die Web-App
+    \item Entwicklung einer React-Webanwendung zur Visualisierung von Fahrzeugdaten auf einer geografischen Karte
+    \item Überarbeitung wesentlicher Teile der Webanwendung zur Verbesserung von Performance und Softwarearchitektur
+    \item Entwicklung einer GraphQL-API zur Bereitstellung der Visualisierungsdaten
+    \item Konzeption neuer Funktionen für die Webanwendung
 \end{itemize}} 
 
 \cventry{08.2020 -- 02.2021}
@@ -197,7 +210,7 @@
 {01067 Dresden, Deutschland}
 {\textit{www.krashennikov.com}}
 {\begin{itemize}
-    \item Eigenständige Entwicklung einer progressiven Web-App (\underline{www.sizze.de}) mit React für die automatische Kleidungsstückvermessung und Kommentierung von Kleidungsstückfotos
+    \item Eigenständige Entwicklung einer Progressive Web App mit React (\underline{www.sizze.de}) zur automatischen Vermessung von Kleidungsstücken und zur Annotation von Kleidungsfotos
 \end{itemize}} 
 
 \cventry{03.2017 -- 08.2019}
@@ -206,7 +219,7 @@
 {Dhaka, Bangladesch}
 {\textit{www.ringid.com}}
 {\begin{itemize}
-    \item Entwickelte Social-Networking-Funktionen (Newsfeed, Profil, Chat) mit Angularjs
+    \item Entwicklung von Funktionen für ein soziales Netzwerk (Newsfeed, Profil und Chat) mit AngularJS
 \end{itemize}} 
 
 %----------------------------------------------------------------------------------------
@@ -215,9 +228,9 @@
 
 \section{Kenntnisse}
 
-\cvitem{Programmierung}{C++, CUDA, RUST, Python}
-\cvitem{Frameworks/Tools}{ROS2, React.js, Node.js, MATLAB}
-\cvitem{Konzepte}{Parallele-Programmierung, Radarsignalverarbeitung, Full-Stack Entwicklung}
+\cvitem{Programmierung}{C++, CUDA, Rust, Python}
+\cvitem{Frameworks/Tools}{ROS 2, React.js, Node.js, MATLAB}
+\cvitem{Schwerpunkte}{Parallele Programmierung, Radarsignalverarbeitung, Full-Stack-Entwicklung}
 \cvitem{Datenbanken}{PostgreSQL, MongoDB}
 \cvitem{Sonstiges}{GraphQL, Microsoft Azure, Firebase, Docker}
 
@@ -225,36 +238,36 @@
 
 
 \cventry{Eingebettete Software}
-{\small 1. RaspNet - Kommunikationsprotokoll für Raspberry Pi}
+{\small RaspNet - Kommunikationsprotokoll für Raspberry Pi}
 {}{}{}
 {
 \begin{itemize}
-    \item Kommunikationsprotokoll (Layer 1-4) für Raspberry Pi Computer in einer Ringtopologie
-    \item Tools: Embedded C, Gertboard mit ATmega328P mcu, Raspberry Pi
+    \item Kommunikationsprotokoll für die Schichten 1 bis 4 für Raspberry-Pi-Rechner in einer Ringtopologie
+    \item Technologien: Embedded C, Gertboard mit ATmega328P-Mikrocontroller, Raspberry Pi
 \end{itemize}
 }
 
 \cventry{Backend-Entwicklung}
-{\small 1. GVIS - Geografische Datenvisualisierung}
+{\small GVIS - Geografische Datenvisualisierung}
 {\textit{ssum-gvis.web.app}}
 {}{}
 {
 \begin{itemize}
-    \item Eine Microservice-basierte Web-App zur Visualisierung nützlicher Informationen (z. B. Wetter) auf einer geografischen Karte
-    \item Alle Source-Code: \textit{\underline{bitbucket.org/raufoon1/workspace/projects/GVIS}}
+    \item Microservice-basierte Webanwendung zur kartenbasierten Visualisierung von Informationen, beispielsweise Wetterdaten
+    \item Quellcode: \textit{\underline{bitbucket.org/raufoon1/workspace/projects/GVIS}}
     \item Architektur: \textit{\underline{bitbucket.org/raufoon1/gvis-integration/src/master/README.md}}
-    \item Tools: TypeScript, React.js, Apollo, GraphQL, Deck.gl, Bootstrap, Express.js, MongoDB, Docker, Microsoft Azure, Heroku, Firebase, Bitbucket, JIRA, Confuence
+    \item Technologien: TypeScript, React.js, Apollo, GraphQL, deck.gl, Bootstrap, Express.js, MongoDB, Docker, Microsoft Azure, Heroku, Firebase, Bitbucket, Jira, Confluence
 \end{itemize}
 } 
 
 \cventry{Full-Stack-Webentwicklung}
-{\small 1. SIZZE - Digitale Kleidervermessung}
+{\small SIZZE - Digitale Vermessung von Kleidungsstücken}
 {\textit{www.sizze.de}}
 {}{}
 {
 \begin{itemize}
-    \item Automatisches Vermessen von Kleidungsstücken und Kommentieren von Kleidungsstückfotos
-    \item Tools: React.js, Redux.js, Django, PostgreSQL
+    \item Automatische Vermessung von Kleidungsstücken und Annotation von Kleidungsfotos
+    \item Technologien: React.js, Redux.js, Django, PostgreSQL
 \end{itemize}
 } 
 
