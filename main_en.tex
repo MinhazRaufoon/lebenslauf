@@ -1,0 +1,152 @@
+% English version of main.tex; based on the bundled ModernCV template.
+% Original template: Xavier Danaux, moderncv 1.2.0 (2012).
+\documentclass[11pt,a4paper,sans]{moderncv}
+\usepackage[default,semibold]{sourcesans}
+\usepackage[english]{babel}
+\usepackage{ragged2e}
+\pdfmapfile{+SourceSansThree.map}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\usepackage[scale=0.85]{geometry}
+\setlength{\hintscolumnwidth}{3.2cm}
+\usepackage{fontawesome}
+\usepackage{marvosym}
+
+\firstname{Minhaz}
+\familyname{Raufoon}
+\title{Software Engineer for Automotive, Embedded and Real-Time Systems}
+\address{}{10587 Berlin, Germany}
+\email{minhaz.raufoon.1567@gmail.com}
+\mobile{+49 178 8680932}
+\photo[35mm][0pt]{picture.png}
+
+% Same centered header and non-destructive photo crop as the German CV.
+\makeatletter
+\renewcommand*{\makecvtitle}{%
+  \recomputecvlengths
+  \noindent
+  \begin{minipage}[c][45mm][c]{\dimexpr\textwidth-43mm\relax}
+    \raggedright
+    {\fontsize{36}{40}\selectfont\color{darkgray}\@firstname\ \@familyname\par}
+    \vspace{2mm}
+    {\fontsize{13}{17}\selectfont\upshape\color{darkgray}\@title\par}
+    \vspace{5mm}
+    {\fontsize{10}{14}\selectfont\color{darkgray}%
+      10587 Berlin\enspace\textbar\enspace
+      \href{tel:+491788680932}{+49 178 8680932}\enspace\textbar\enspace
+      \href{mailto:\@email}{\@email}\par
+      \vspace{1mm}
+      \href{https://minraufoon.web.app}{minraufoon.web.app}\enspace\textbar\enspace
+      \href{https://github.com/MinhazRaufoon}{\faGithub\ MinhazRaufoon}\enspace\textbar\enspace
+      \href{https://www.linkedin.com/in/raufoon/}{\faLinkedin\ raufoon}\par}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c][45mm][c]{35mm}
+    \includegraphics[viewport=260 184 1006.667 1144,clip,width=35mm,height=45mm]{\@photo}
+  \end{minipage}
+  \par\vspace{2mm}}
+\makeatother
+
+\begin{document}
+\makecvtitle
+
+\section{Personal Information}
+\cvitem{Date of birth}{10 September 1993}
+\cvitem{Nationality}{Bangladeshi}
+\cvitem{Residence status}{Permanent residence permit in Germany}
+\cvitem{Languages}{English (C1), German (B1)}
+
+\section{Education}
+\cventry{Oct 2019 -- Dec 2023}
+{Master of Science - Automotive Software Engineering}
+{Technische Universität Chemnitz}{09111 Chemnitz, Germany}
+{\textit{www.tu-chemnitz.de}}
+{\begin{itemize}
+  \item Final grade: 1.4 (German grading system)
+  \item Research internship: Radar-based ego-velocity estimation in C++
+  \item Master's thesis: CUDA/C++-based direction-of-arrival (DoA) estimation for large coherent radar apertures
+  \item RaspNet: Communication protocol (layers 1--4) for Raspberry Pi in Embedded C
+\end{itemize}}
+
+\cventry{Jan 2013 -- Dec 2016}
+{Bachelor of Science (Honours) - Computer Science and Engineering}
+{University of Dhaka}{1000 Dhaka, Bangladesh}{\textit{www.du.ac.bd}}
+{\begin{itemize}
+  \item Final grade: 3.50 (German equivalent: 2.0)
+  \item Bachelor's thesis: Experimental comparison of fast-failover methods in software-defined networking (SDN)
+\end{itemize}}
+
+\section{Professional Experience}
+\cventry{Oct 2023 -- Present}
+{Concept Developer - Autonomous Driving}
+{IAV GmbH}{10587 Berlin, Germany}{\textit{www.iav.com}}
+{\begin{itemize}
+  \item Develop GPU-based radar signal processing in CUDA and C++ for large radar apertures under real-time constraints
+  \item Compare accuracy and performance against modern radar and lidar systems
+  \item Develop tracking algorithms in MATLAB and Python to estimate the position and velocity of radar objects
+\end{itemize}}
+
+\cventry{Oct 2022 -- Sep 2023}
+{Master's Thesis Student - Parallel Computing for Radar Signal Processing}
+{Volkswagen AG}{38436 Wolfsburg, Germany}{\textit{www.volkswagenag.com}}
+{\begin{itemize}
+  \item Implemented and compared parallel DoA methods in CUDA and C++ for large coherent 3D radar apertures
+  \item Analysed GPU utilisation, execution time and bottlenecks using NVIDIA Nsight
+  \item Developed a C++ scheduling solution to distribute computations across multiple GPUs
+\end{itemize}}
+
+\cventry{Sep 2021 -- Sep 2022}
+{Student Research Assistant - Sensor Fusion Algorithm Development}
+{Faculty of Electrical Engineering and Information Technology, Technische Universität Chemnitz}
+{09111 Chemnitz, Germany}{\textit{www.tu-chemnitz.de/etit/nt/index.html}}
+{\begin{itemize}
+  \item Independently developed C++ applications to acquire and visualise Smartmicro radar data over CAN using PEAK CAN USB Pro
+  \item Researched and implemented radar-based ego-velocity estimation in C++, including filtering and moving-target detection
+  \item Conducted a test drive with radar, camera and GPS sensors; analysed measurement data using Python and Matplotlib
+\end{itemize}}
+
+\cventry{Apr 2021 -- Dec 2021}
+{Working Student - Software Development}
+{Intenta GmbH}{09112 Chemnitz, Germany}{\textit{www.intenta.de}}
+{\begin{itemize}
+  \item Developed a React/deck.gl web application to visualise vehicle data on maps and charts, along with supporting GraphQL APIs
+  \item Refactored code to improve performance and maintainability within an agile Scrum team
+\end{itemize}}
+
+\cventry{Aug 2020 -- Feb 2021}
+{Working Student - Software Development}
+{Krashennikov}{01067 Dresden, Germany}{\textit{www.krashennikov.com}}
+{\begin{itemize}
+  \item Independently developed a React/Redux progressive web application (\underline{www.sizze.de}) for automated garment measurement and image annotation for machine-learning data
+  \item SIZZE technologies: React, Redux, Django and PostgreSQL
+\end{itemize}}
+
+\cventry{Mar 2017 -- Aug 2019}
+{Junior Software Engineer}
+{RingID}{Dhaka, Bangladesh}{\textit{www.ringid.com}}
+{\begin{itemize}
+  \item Developed newsfeed, profile and chat features in AngularJS; reworked the build system using Gulp.js and custom code minification
+\end{itemize}}
+
+\section{Skills}
+\cvitem{Programming}{C++, CUDA, Python, MATLAB, Embedded C, Rust}
+\cvitem{Specialisations}{GPU computing, parallel programming, radar signal processing, digital signal processing, real-time software and performance optimisation}
+\cvitem{Development tools}{CMake, Git, NVIDIA Nsight, Catch2, spdlog}
+\cvitem{Frameworks}{ROS 2 Humble, DDS / Cyclone DDS, OpenCV, Qt / QML}
+\cvitem{Web development}{JavaScript / TypeScript, React / Redux, Node.js / Express, GraphQL / Apollo}
+\cvitem{Databases}{PostgreSQL, MongoDB}
+\cvitem{Deployment}{Docker, Microsoft Azure, Firebase}
+
+\section{Certifications}
+\cvitem{Jun 2025}{IBM Generative AI for Software Developers Specialization}
+\cvitem{Mar 2021}{Functional Programming Principles in Scala - Coursera}
+\cvitem{Mar 2021}{Microsoft Azure - Beginner's Guide - Udemy}
+\cvitem{Jun 2019}{Agile Software Development - Coursera}
+
+\null
+\vfill
+\hfill\includegraphics[scale=.1]{signature.jpg}
+\\
+\small \hspace{10 mm}Date: 1 October 2026 \hfill
+Place: Berlin, Germany \hfill Signature\hspace{10 mm}
+\end{document}
